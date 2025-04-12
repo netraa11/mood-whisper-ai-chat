@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -145,6 +145,15 @@ export const SignUpForm = () => {
             {isLoading ? "Creating Account..." : "Sign Up"}
             {!isLoading && <ArrowRight className="ml-2 h-5 w-5" />}
           </Button>
+          
+          <div className="text-center mt-4">
+            <p className="text-sm text-foreground/70">
+              Already have an account?{" "}
+              <Link to="/signin" className="text-primary font-medium hover:underline">
+                Sign In
+              </Link>
+            </p>
+          </div>
         </form>
       </Form>
     </div>

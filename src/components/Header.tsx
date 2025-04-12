@@ -22,6 +22,9 @@ export const Header = () => {
           <a href="#testimonials" className="text-foreground/70 hover:text-foreground transition">Testimonials</a>
           <div className="flex items-center gap-4">
             <ThemeToggle />
+            <Button variant="outline" asChild className="rounded-full">
+              <Link to="/signin">Sign In</Link>
+            </Button>
             <Button asChild className="rounded-full">
               <Link to="/signup">Sign Up</Link>
             </Button>
@@ -62,7 +65,12 @@ export const Header = () => {
             >
               Testimonials
             </a>
-            <Button asChild className="rounded-full w-full mt-4">
+            <Button asChild variant="outline" className="rounded-full w-full">
+              <Link to="/signin" onClick={() => setIsMenuOpen(false)}>
+                Sign In
+              </Link>
+            </Button>
+            <Button asChild className="rounded-full w-full mt-2">
               <Link to="/signup" onClick={() => setIsMenuOpen(false)}>
                 Sign Up
               </Link>
